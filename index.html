@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신세계 건설</title>
+    <link rel="stylesheet" href="./common2.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">로고</a></h1>
+        <nav id="member">
+            <ul>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+        </nav>
+        <a href="#" id="gnbView">메뉴</a>
+        <nav id="gnb">
+            <ul>
+                <li><a href="#">리스트1</a></li>
+                <li><a href="#">리스트2</a></li>
+                <li><a href="#">리스트3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="sloganWrap">
+        <section id="slogan">
+            <h2>고객의<br>행복을 위하여</h2>
+            <p>주거, 쇼핑, 레저의 다양한 건축으로<br>풍요로운 삶의 행복을 전달합니다.</p>
+        </section>
+    </div>
+    <main id="content">
+        <section id="content1">컨텐츠1</section>
+        <section id="content2">컨텐츠2</section>
+        <section id="content3">컨텐츠3</section>
+        <section id="content4">컨텐츠4</section>
+    </main>
+    <footer id="footer">푸터</footer>
+    <script>
+        const gnbView = document.querySelector('#gnbView');
+        // console. log(gnbView);
+        const gnb = document.querySelector("#gnb");
+        // console. log(gnb);
+        
+        gnbView.addEventListener('click', () => {
+          gnb.style.zIndex = 99;
+          gnb.style.opacity = 1;
+          document.body.style.overflow = 'hidden';
+        })
+
+        gnb.addEventListener('click', () => {
+            gnb.style.zIndex = -1;
+            gnb.style.opacity = 0;
+            document.body.style.overflow = 'auto';
+        })
+   </script>
+</body>
+</html>

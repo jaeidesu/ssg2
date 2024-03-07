@@ -1,0 +1,236 @@
+@charset "utf-8";
+
+
+* {
+    box-sizing: border-box;
+}
+body, h1, h2, ul, li, a, p {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+/* 1221 이상 */
+body {
+    width: calc(100vw 17px);
+    height: 40vw;
+}
+
+
+#header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#header h1 {
+    position: absolute;
+    top: 40px; left: 102px;
+    width: 60px;
+    font-size: 24px;
+}
+
+
+#member {
+    position: absolute;
+    top: 40px; right: 102px;
+}
+#member ul {
+    display: flex;
+}
+#member ul li {
+    padding-right: 15px;
+}
+#member ul li a {
+    font-size: 14px;
+}
+
+
+#gnbView {
+   display: none;
+}
+#gnb ul {
+    display: flex;
+}
+#gnb ul li a {
+    font-size: 14px;
+    padding: 0 15px;
+}
+
+
+#sloganWrap {
+    position: relative;
+    /* width: 100vw; */
+    /* padding: 10px 0; */
+    background: url(./bg.jpg) no-repeat center / cover;
+}
+#slogan {
+    position: relative;
+    width: 1200px;
+    height: 45vw;
+    margin: 0 auto;
+    color: #fff;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+}
+#sloganWrap:before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.3;
+}
+#slogan h2 {
+    position: relative;
+    margin: 70px 0;
+    font-size: 7vw;
+}
+#slogan p {
+    position: relative;
+    font-size: 2vw;
+    margin-bottom: 70px;
+}
+
+
+#content {
+    width: 1200px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+}
+#content section {
+    width: 23.5%;
+    height: 300px;
+    background: #e3e3e3;
+    /* margin: 30px 25px 0; */
+    font-weight: 700;
+}
+
+
+#footer {
+    height: 150px;
+    background: #19825c;
+    color: #fff;
+}
+
+@media screen and ( max-width: 1220px ) {
+    #slogan {
+        width: 100%; padding-left: 50px;
+    }
+    #content {
+        width: 100%;
+    }
+}
+
+@media screen and ( max-width: 1000px ) {
+    #header h1 {
+        top: 35px;
+        left: 30px;
+    }
+    #member {
+        top: 30px;
+        right: 20px;
+    }
+    #member ul {
+        flex-flow: column nowrap;
+        align-items: end;
+    }
+    #slogan {
+        height: 100vh;
+    }
+    #slogan h2 {
+        font-size: 4rem;
+    }
+    #slogan p {
+        font-size: 1rem;
+    }
+    #gnbView {
+        display: block;
+        position: relative;
+        width: 50px; height: 50px;
+        border: 1px solid #000;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    #gnbView::before {
+        content: "";
+        position: absolute;
+        top: 20px; left: 10px;
+        width: 30px;
+        border-bottom: 1px solid #000;
+    }
+    #gnbView::after {
+        content: "";
+        position: absolute;
+        top: 30px; left: 10px;
+        width: 30px;
+        border-bottom: 1px solid #000;
+    }
+    #gnb {
+        position: fixed;
+        top: 0; left: 0;
+        background: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: 100vh;
+        transition: 0.5s;
+        opacity: 0;
+        z-index: -1;
+        /* z-index: -1; > body 아래로 인식 못하는 영역으로 보내는 것 */
+    }
+    #gnb ul {
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    #gnb ul li {
+        line-height: 50px;
+        /* border-bottom: 1px solid #fff; */
+    }
+    #gnb ul li a {
+        font-size: 34px;
+        text-align: center;
+        color: #fff;
+    }
+    #content {
+        flex-wrap: wrap;
+    }
+    #content > section {
+        width: 49%;
+    }
+    #content1, #content2 {
+        margin-bottom: 10px;
+    } 
+}
+
+@media screen and ( max-width: 800px ) {
+    #slogan h2 {
+        font-size: 3rem;
+    }
+    #slogan p {
+        font-size: 1.2rem;
+    }
+    #content {
+        flex-flow: column wrap;
+    }
+    #content > section {
+        width: 100%;
+    }
+    #content3 {
+        margin-bottom: 10px;
+    }
+}
+
